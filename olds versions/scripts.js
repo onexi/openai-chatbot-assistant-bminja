@@ -22,7 +22,11 @@ async function getAssistant(){
 
 async function getThread(){
 
-// Enter Code Here
+  async function create_thread() {
+    let response = await openai.beta.threads.create()
+    state.thread_id = response.id;
+    return response;
+ }
 
 }
 async function getResponse(){
